@@ -40,6 +40,12 @@ export interface EnvValues {
 
   URL_BIRTHDAY_AZURE:string;
   KEY_BIRTHDAY_AZURE:string;
+
+  EXCEL_PASSWORD:string;
+
+  FACTURAMA_3:string;
+
+  ROBOT_CONTRACT:string;
 }
 
 export interface ReturnUseGenerator {

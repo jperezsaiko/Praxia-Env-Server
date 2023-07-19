@@ -44,7 +44,10 @@ const schemaValidation = yup.object({
   GITHUB_TOKEN: yup.string().default(""),
   IS_PRODUCTION: yup
     .boolean()
-    .transform((libraryValue, domValue) => (domValue === "si" ? true : false)),
+    .transform((libraryValue, domValue) => {
+      console.log(libraryValue)
+      return (domValue === "si" ? true : false)
+    }),
   JWT_WORD: yup.string().required("Obligatorio"),
   MAILJET_APPI_KEY: yup.string().required("Obligatorio"),
   MAILJET_APPI_SECRET: yup.string().required("Obligatorio"),

@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { Context } from "../../App";
 
 export default function RenewContract() {
   const hook = useContext(Context);
+  if (hook.form === undefined) return <></>;
 
   return (
     <Controller

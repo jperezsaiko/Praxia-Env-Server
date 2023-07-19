@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { Context } from "../App";
@@ -6,6 +6,7 @@ import { FormHelperText } from "@mui/material";
 
 export default function FacturamaUrl() {
   const hook = useContext(Context);
+  if (hook.form === undefined) return <></>;
 
   return (
     <>
