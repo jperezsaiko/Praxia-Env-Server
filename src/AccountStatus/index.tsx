@@ -18,7 +18,7 @@ export default function AccountStatus() {
             margin="normal"
             label="Key estado de cuenta"
             variant="outlined"
-            placeholder="Ejemplo: E2kMH3u1F-EejloD6FB1R44JxvqaDeK9fyjBSUG4eQt1t1A=="
+            placeholder="Ejemplo: E2kloD6FB1R44JxvqaDeK9fyjBSUG4eQt1t1A=="
           />
         )}
         defaultValue={""}

@@ -18,7 +18,7 @@ export default function ContractRenovation() {
             margin="normal"
             label="Url contrato"
             variant="outlined"
-            placeholder="Ejemplo: https://praxiatriggers.azurewebsites.net/api/AzF-ContractTestin2023"
+            placeholder="Ejemplo: https://triggers.azurewebsites.net/api/AzF-ContractTestin2023"
           />
         )}
         defaultValue={""}

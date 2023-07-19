@@ -18,7 +18,7 @@ export default function PdfMovements() {
             margin="normal"
             label="Key pdf movimientos"
             variant="outlined"
-            placeholder="Ejemplo: E2kMH3u1F-EejloD6FB1R44JxvqaDeK9fyjBSUG4eQt1t1A=="
+            placeholder="Ejemplo: E2kMH3u1F-EejloD6FDeK9fyjBSUG4eQt1t1A=="
           />
         )}
         defaultValue={""}

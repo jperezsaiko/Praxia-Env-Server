@@ -18,7 +18,7 @@ export default function DatabaseServer() {
             margin="normal"
             label="Servidor base de datos"
             variant="outlined"
-            placeholder="Ejemplo: applicationsaiko.database.windows.net"
+            placeholder="Ejemplo: myappwithms.database.windows.net"
           />
         )}
         defaultValue={""}

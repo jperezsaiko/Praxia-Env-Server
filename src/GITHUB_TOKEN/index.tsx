@@ -18,7 +18,7 @@ export default function GithubToken() {
             margin="normal"
             label="Github token"
             variant="outlined"
-            placeholder="Ejemplo: ghp_o5TIS4ABYTAKPsNogYtyLrAIWCvT3GNuAn"
+            placeholder="Ejemplo: ghp_o5TITAKPsNogYtyLrAIWCvT3GNuAn"
           />
         )}
         defaultValue={""}

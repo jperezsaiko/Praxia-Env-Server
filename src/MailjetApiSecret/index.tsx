@@ -18,7 +18,7 @@ export default function MailjetApiSecret() {
             margin="normal"
             label="Mailjet api secret"
             variant="outlined"
-            placeholder="Ejemplo: 28a959bf8400b09798f1689"
+            placeholder="Ejemplo: 28a9509798f1689"
           />
         )}
         defaultValue={""}

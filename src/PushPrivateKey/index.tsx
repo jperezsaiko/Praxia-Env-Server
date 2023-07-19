@@ -18,7 +18,7 @@ export default function PushPrivateKey() {
             margin="normal"
             label="Notificaciones Push Privadas"
             variant="outlined"
-            placeholder="Ejemplo: DYF5930glJS5X-P0sxchk-Irjrem49O2N3uf0rbKZpa5ekc"
+            placeholder="Ejemplo: DYF5930glJS5X-P0sxchk-2N3uf0rbKZpa5ekc"
           />
         )}
         defaultValue={""}

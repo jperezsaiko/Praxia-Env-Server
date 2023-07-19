@@ -18,7 +18,7 @@ export default function TcRenovation() {
             margin="normal"
             label="Url tipo de cambio"
             variant="outlined"
-            placeholder="Ejemplo: https://praxiatriggers.azurewebsites.net/api/AzF-TcTestin2023"
+            placeholder="Ejemplo: https://iggers.azurewebsites.net/api/AzF-TcTestin2023"
           />
         )}
         defaultValue={""}

@@ -17,7 +17,7 @@ export default function PushPublicKey() {
             margin="normal"
             label="Notificaciones Push Publicas"
             variant="outlined"
-            placeholder="Ejemplo: BCpydRHUAOHdaKJlur_TF9Wsd99Y0AXJ2hjfK5VG7pJdvrE-maYXMXYfjyo90HGmX7bwnnfFqZ-6wUXzo"
+            placeholder="Ejemplo: BCpydRHUAOHdaKJlur_TF9Wsd99Y0VG7pJdvrE-maYXMXYfjyo90HGmX7bwnnfFqZ-6wUXzo"
           />
         )}
         defaultValue={""}

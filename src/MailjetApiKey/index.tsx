@@ -18,7 +18,7 @@ export default function MailjetApiKey() {
             margin="normal"
             label="Mailjet api key"
             variant="outlined"
-            placeholder="Ejemplo: a84d08eGdj19vf92Ab3f244bd98471"
+            placeholder="Ejemplo: a84d08eG2Ab3f244bd98471"
           />
         )}
         defaultValue={""}

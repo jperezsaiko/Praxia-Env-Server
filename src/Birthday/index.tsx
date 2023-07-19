@@ -18,7 +18,7 @@ export default function Birthday() {
             margin="normal"
             label="Url para cumpleaños"
             variant="outlined"
-            placeholder="Ejemplo: https://praxiatriggers.azurewebsites.net/api/AzF-BirthdayTestin2023"
+            placeholder="Ejemplo: https://xiatri.azurewebsites.net/api/AzF-BirthdayTestin2023"
           />
         )}
         defaultValue={""}

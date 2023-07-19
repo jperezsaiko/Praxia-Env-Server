@@ -18,7 +18,7 @@ export default function KeyDocuments() {
             margin="normal"
             label="Key documentos (descarga)"
             variant="outlined"
-            placeholder="Ejemplo: E2kMH3u1F-EejloD6FB1R44JxvqaDeK9fyjBSUG4eQt1t1A=="
+            placeholder="Ejemplo: E2kMH3u1F-EejloD6FBeK9fyjBSUG4eQt1t1A=="
           />
         )}
         defaultValue={""}
