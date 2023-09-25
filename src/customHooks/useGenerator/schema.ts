@@ -138,6 +138,17 @@ const schemaValidation = yup.object({
     .required(
       "Obligatorio, sirve para la encriptacion/des-encriptacion para validar el 2FA"
     ),
+
+  TODO_ROBOT_URL: yup
+    .string()
+    .matches(regexHttpsSecure, {
+      message: `El texto debe ser un url con https`,
+    })
+    .required("Obligatorio para el To Do del robot"),
+
+  TODO_KEY_ROBOT: yup
+    .string()
+    .required("Clave requerida para poder ejecutar el To Do del robot"),
 });
 
 export default schemaValidation;

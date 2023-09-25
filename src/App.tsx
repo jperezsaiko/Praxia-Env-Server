@@ -36,6 +36,10 @@ import DatabaseServer from "./DatabaseServer";
 import RefreshTokenWord from "./RefreshTokenWord";
 import MailjetApiKey from "./MailjetApiKey";
 import TwoFactorSecretKey from "./2faSecretKey";
+import TwoFactorSecretIv from "./2faSecrettIv";
+import AlgorithEncrypt2fa from "./AlgorithEncrypt2fa";
+import ToDoKeyRobot from "./TodoKeyRobot";
+import ToDoRobotUrl from "./ToDoRobotUrl";
 
 export const Context = createContext<ReturnUseGenerator>({
   attemptCreateEnvFile: () => {},
@@ -107,6 +111,11 @@ function App() {
               <UrlFront/>
               <UrlBackend/>
               <TwoFactorSecretKey/>
+              <TwoFactorSecretIv/>
+              <AlgorithEncrypt2fa/>
+
+              <ToDoRobotUrl/>
+              <ToDoKeyRobot/>
             </FormControl>
             <div className="generateEnv">
               <Button type="submit" variant="outlined">

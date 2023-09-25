@@ -48,6 +48,17 @@ export interface EnvValues {
   ROBOT_CONTRACT:string;
 
   SECRET_KEY:string;
+
+  SECRET_IV:string;
+
+  ENCRYPTION_METHOD:string;
+
+  /**
+   * Url of the robot for the to do
+   */
+  TODO_ROBOT_URL:string;
+
+  TODO_KEY_ROBOT:string;
 }
 
 export interface ReturnUseGenerator {

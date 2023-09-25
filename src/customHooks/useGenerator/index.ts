@@ -14,7 +14,7 @@ const defaultValues = {
 export default function useGenerator() {
   const form = useForm<EnvValues>({
     defaultValues,
-    mode: "onChange",
+    mode: "all",
     resolver: yupResolver(schemaValidation),
   });
 
@@ -32,6 +32,10 @@ export default function useGenerator() {
       birthday:{
         url:envParams.URL_BIRTHDAY_AZURE,
         key:envParams.KEY_BIRTHDAY_AZURE
+      },
+      todo:{
+        url:envParams.TODO_ROBOT_URL,
+        key:envParams.TODO_KEY_ROBOT
       }
     }
 
@@ -73,6 +77,7 @@ export default function useGenerator() {
     URL_FRONT = ${envParams.URL_FRONT}
     URL_SERVER = ${envParams.URL_SERVER}
     SECRET_KEY = ${envParams.SECRET_KEY}
+    SECRET_IV = ${envParams.SECRET_IV}
     `;
 
     const file = new Blob([parsedEnvFile], { type: "text/plain" });
