@@ -46,6 +46,8 @@ export interface EnvValues {
   FACTURAMA_3:string;
 
   ROBOT_CONTRACT:string;
+
+  SECRET_KEY:string;
 }
 
 export interface ReturnUseGenerator {

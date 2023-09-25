@@ -72,6 +72,7 @@ export default function useGenerator() {
     TZ = America/Monterrey
     URL_FRONT = ${envParams.URL_FRONT}
     URL_SERVER = ${envParams.URL_SERVER}
+    SECRET_KEY = ${envParams.SECRET_KEY}
     `;
 
     const file = new Blob([parsedEnvFile], { type: "text/plain" });

@@ -1,8 +1,8 @@
 import * as yup from "yup";
 
 const regexHttpsSecure = /^https:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(\/\S*)?$/;
-const regexHttpsOrLocalhost = /^(http:\/\/localhost|(https?:\/\/(?:www\.)?\w+\.\w+)).*$/;
-
+const regexHttpsOrLocalhost =
+  /^(http:\/\/localhost|(https?:\/\/(?:www\.)?\w+\.\w+)).*$/;
 
 const schemaValidation = yup.object({
   ACCESS_TOKEN_DURATION: yup.string().required("Obligatorio"),
@@ -42,17 +42,16 @@ const schemaValidation = yup.object({
     .string()
     .required("Obligatorio, se necesita el usuario del PAC"),
   GITHUB_TOKEN: yup.string().default(""),
-  IS_PRODUCTION: yup
-    .boolean()
-    .transform((libraryValue, domValue) => {
-      console.log(libraryValue)
-      return (domValue === "si" ? true : false)
-    }),
+  IS_PRODUCTION: yup.boolean().transform((libraryValue, domValue) => {
+    console.log(libraryValue);
+    return domValue === "si" ? true : false;
+  }),
   JWT_WORD: yup.string().required("Obligatorio"),
   MAILJET_APPI_KEY: yup.string().required("Obligatorio"),
   MAILJET_APPI_SECRET: yup.string().required("Obligatorio"),
   MAILJET_EMAIL_FROM: yup.string().required("Obligatorio"),
   PDF_API_KEY: yup.string().required("Obligatorio"),
+
   PDF_BANK_ACCOUNT_MOVEMENTS: yup
     .string()
     .required("Obligatorio, para pdf de bancos/movimientos"),
@@ -109,16 +108,36 @@ const schemaValidation = yup.object({
     .string()
     .required("Obligatorio el key para los tipos de camio en azure"),
 
-    URL_BIRTHDAY_AZURE:yup
+  URL_BIRTHDAY_AZURE: yup
     .string()
     .matches(regexHttpsSecure, {
       message: `El texto debe ser un url con https. Ejemplo: https://praxiatriggers.azurewebsites.net/api/AzF-RenewContract`,
     })
     .required("Obligatorio"),
 
-    KEY_BIRTHDAY_AZURE:yup
+  KEY_BIRTHDAY_AZURE: yup
     .string()
-    .required("Obligatorio el key para los recordatorios de cumpleaños en azure")
+    .required(
+      "Obligatorio el key para los recordatorios de cumpleaños en azure"
+    ),
+
+  SECRET_KEY: yup
+    .string()
+    .required(
+      "Obligatorio, sirve para la encriptacion/des-encriptacion para validar el 2FA"
+    ),
+  SECRET_IV: yup
+    .string()
+    .required(
+      "Obligatorio, sirve para la encriptacion/des-encriptacion para validar el 2FA"
+    ),
+
+  ENCRYPTION_METHOD: yup
+    .string()
+    .default("aes-256-cbc")
+    .required(
+      "Obligatorio, sirve para la encriptacion/des-encriptacion para validar el 2FA"
+    ),
 });
 
 export default schemaValidation;

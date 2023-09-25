@@ -35,6 +35,7 @@ import PdfApiKey from "./PdfApiKey";
 import DatabaseServer from "./DatabaseServer";
 import RefreshTokenWord from "./RefreshTokenWord";
 import MailjetApiKey from "./MailjetApiKey";
+import TwoFactorSecretKey from "./2faSecretKey";
 
 export const Context = createContext<ReturnUseGenerator>({
   attemptCreateEnvFile: () => {},
@@ -105,6 +106,7 @@ function App() {
               <JwtWord />
               <UrlFront/>
               <UrlBackend/>
+              <TwoFactorSecretKey/>
             </FormControl>
             <div className="generateEnv">
               <Button type="submit" variant="outlined">
