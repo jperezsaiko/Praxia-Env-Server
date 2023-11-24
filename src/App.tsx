@@ -3,7 +3,7 @@ import AccessTokenDuration from "./AccessTokenDuration";
 import FormControl from "@mui/material/FormControl";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import useGenerator from "./customHooks/useGenerator";
+import useGenerator, { INITIAL_STATE } from "./customHooks/useGenerator";
 import AccessTokenName from "./AccessTokenName";
 import AzureFunctionUrl from "./AzureFunctionUrl";
 import WarningIcon from "@mui/icons-material/Warning";
@@ -40,10 +40,18 @@ import TwoFactorSecretIv from "./2faSecrettIv";
 import AlgorithEncrypt2fa from "./AlgorithEncrypt2fa";
 import ToDoKeyRobot from "./TodoKeyRobot";
 import ToDoRobotUrl from "./ToDoRobotUrl";
+import LoadFrontendParams from "./LoadFrontendParams";
+import Domains from "./Domains";
+import OdcKey from "./OdcKey";
+import BiVentasCompras from "./BiVentasCompras";
+import BiProgPagos from "./BiProgPagos";
 
 export const Context = createContext<ReturnUseGenerator>({
   attemptCreateEnvFile: () => {},
   form: undefined,
+  addDomain: () => false,
+  state: INITIAL_STATE,
+  setEnvValues: () => {},
 });
 
 function App() {
@@ -51,15 +59,6 @@ function App() {
 
   return (
     <>
-      <div className="information">
-        <WarningIcon />
-        <b>Deprecado: </b>
-        <p>
-          Estos campos no son utilizados pero se agregan al pipeline para evitar
-          errores, estos campos se iluminan de color naranja
-        </p>
-      </div>
-
       <form
         onSubmit={hook.form.handleSubmit(hook.attemptCreateEnvFile, (e) =>
           console.error(e)
@@ -67,20 +66,42 @@ function App() {
       >
         <Context.Provider value={hook}>
           <Box className="containerForm" minWidth={120}>
+            <div className="help">
+              <div className="helpLabel">
+                <span className="required"></span>
+                <p>Obligatorio</p>
+              </div>
+
+              <div className="helpLabel">
+                <span className="optional"></span>
+                <p>Opcional</p>
+              </div>
+
+              <div className="helpLabel">
+                <span></span>
+                <p>
+                  Deprecado (Se siguen usando solo para mantener los legacy)
+                </p>
+              </div>
+            </div>
+
             <FormControl fullWidth>
               <AccessTokenDuration />
             </FormControl>
             <FormControl fullWidth>
               <AccessTokenName />
               <RefreshTokeName />
-              <RefreshTokenWord/>
+              <RefreshTokenWord />
               <AzureFunctionUrl />
-              <PdfApiKey/>
+              <OdcKey />
+              <PdfApiKey />
+              <BiVentasCompras />
+              <BiProgPagos />
               <BlobStorageKey />
               <DatebaseName />
               <DatebaseUsername />
               <DatabasePassword />
-              <DatabaseServer/>
+              <DatabaseServer />
               {/* <ExcelPassword /> */}
               {/* <FacturamaUrl /> */}
             </FormControl>
@@ -104,20 +125,22 @@ function App() {
               <PushPublicKey />
               <MailjetEmail />
               <MailjetApiSecret />
-              <MailjetApiKey/>
+              <MailjetApiKey />
               <TcRenovation />
               <Birthday />
               <JwtWord />
-              <UrlFront/>
-              <UrlBackend/>
-              <TwoFactorSecretKey/>
-              <TwoFactorSecretIv/>
-              <AlgorithEncrypt2fa/>
+              <UrlFront />
+              <Domains />
+              <UrlBackend />
+              <TwoFactorSecretKey />
+              <TwoFactorSecretIv />
+              <AlgorithEncrypt2fa />
 
-              <ToDoRobotUrl/>
-              <ToDoKeyRobot/>
+              <ToDoRobotUrl />
+              <ToDoKeyRobot />
             </FormControl>
             <div className="generateEnv">
+              <LoadFrontendParams />
               <Button type="submit" variant="outlined">
                 Generar parametros
               </Button>

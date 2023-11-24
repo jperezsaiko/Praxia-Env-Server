@@ -26,7 +26,11 @@ export default function UrlBackend() {
         name="URL_SERVER"
         control={hook.form.control}
       />
-      <FormHelperText>[URL_SERVER] URL del backend para el funcionamiento de Praxia. <b>El url NO debe terminar con diagonal</b></FormHelperText>
+      <FormHelperText>
+        [URL_SERVER] URL del backend para el funcionamiento de Praxia. En este
+        caso, debe ser el URL del dominio que otorga el hosting, en este caso
+        Microsoft. <b>El url NO debe terminar con diagonal</b>
+      </FormHelperText>
 
       {hook.form.formState.errors.URL_SERVER && (
         <Alert severity="error">{`${hook.form.formState.errors.URL_SERVER.message}`}</Alert>

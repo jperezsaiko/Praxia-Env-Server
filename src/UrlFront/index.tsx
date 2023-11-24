@@ -27,7 +27,7 @@ export default function UrlFront() {
         control={hook.form.control}
       />
       <FormHelperText>
-        [URL_FRONT] URL del cliente con la UI del sistema.
+        [URL_FRONT] URL del cliente con la UI del sistema. Este deber ser el dominio origanl que otorga el hosting (en este caso Microsoft)
         <b>El url NO debe terminar con diagonal</b>
       </FormHelperText>
 

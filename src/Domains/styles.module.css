@@ -1,0 +1,15 @@
+.domains {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.urlInput{
+    display: flex;
+    gap:0 1rem;
+}
+
+.domainsList{
+}

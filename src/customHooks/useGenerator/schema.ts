@@ -1,10 +1,33 @@
 import * as yup from "yup";
 
+const regexPowerBi = /^https:\/\/app\.powerbi\.com/;
+
 const regexHttpsSecure = /^https:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}(\/\S*)?$/;
 const regexHttpsOrLocalhost =
   /^(http:\/\/localhost|(https?:\/\/(?:www\.)?\w+\.\w+)).*$/;
 
 const schemaValidation = yup.object({
+  REACT_APP_BI_COMPRAS: yup
+    .string()
+    .matches(regexPowerBi, { message: "La liga debe ser de power bi" })
+    .default(null)
+    .nullable()
+    .typeError("El url del reporte debe de ser texto"),
+  REACT_APP_BI_PROG_PAGOS: yup
+    .string()
+    .matches(regexPowerBi, { message: "La liga debe ser de power bi" })
+    .default(null)
+    .nullable()
+    .typeError("El url del reporte debe de ser texto"),
+  REACT_APP_BI_VENTAS: yup
+    .string()
+    .matches(regexPowerBi, { message: "La liga debe ser de power bi" })
+    .default(null)
+    .nullable()
+    .typeError("El url del reporte debe de ser texto"),
+
+  PDF_ODC: yup.string().required("Obligatorio"),
+
   ACCESS_TOKEN_DURATION: yup.string().required("Obligatorio"),
   ACCESS_TOKEN_NAME: yup
     .string()
@@ -30,14 +53,7 @@ const schemaValidation = yup.object({
   FACTURAMA_PASSWORD: yup
     .string()
     .required("Obligatorio, se necesita la contraseña del PAC"),
-  // FACTURAMA_PRODUCTION: yup.boolean().required("Obligatorio").transform((valueLibrary,valueHtml)=>{
-  //   console.log({
-  //     valueLibrary,
-  //     valueHtml
-  //   });
 
-  //   return valueLibrary
-  // }),
   FACTURAMA_USER: yup
     .string()
     .required("Obligatorio, se necesita el usuario del PAC"),

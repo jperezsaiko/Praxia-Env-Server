@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+import { EnvValues, EnvValuesFile } from "../../customHooks/useGenerator/types";
+
 /**
  * Download a `Blob` instance on the client side
  * @param blob - `Blob` instance of the file attempt to be downloaded
@@ -18,4 +21,31 @@ export function downloadBlob(blob: Blob, filename: string) {
 
   // Clean up the temporary URL
   URL.revokeObjectURL(url);
+}
+
+export function readEnvVariables(file: File): Promise<EnvValuesFile|any> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    // When the file has been read successfully
+    reader.onload = function (e: ProgressEvent<FileReader>) {
+      if (e.target === null) {
+        return reject({});
+      }
+
+      const fileContent = e.target.result;
+
+      if (typeof fileContent === "string") {
+        
+        const data = (dotenv.parse(fileContent));
+
+        return resolve(data);
+        
+      }
+
+      return reject({});
+    };
+
+    reader.readAsText(file);
+  });
 }
