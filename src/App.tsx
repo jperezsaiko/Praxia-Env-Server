@@ -78,7 +78,7 @@ function App() {
               </div>
 
               <div className="helpLabel">
-                <span></span>
+                <span className="legacy"></span>
                 <p>
                   Deprecado (Se siguen usando solo para mantener los legacy)
                 </p>
@@ -102,8 +102,6 @@ function App() {
               <DatebaseUsername />
               <DatabasePassword />
               <DatabaseServer />
-              {/* <ExcelPassword /> */}
-              {/* <FacturamaUrl /> */}
             </FormControl>
 
             <FormControl fullWidth>

@@ -12,13 +12,12 @@ export default function AlgorithEncrypt2fa() {
 
   return (
     <>
-      <InputLabel id="algorithEncrypt2fa">Algoritmo encriptacion 2FA</InputLabel>
+      <InputLabel >Algoritmo encriptacion 2FA</InputLabel>
       <Controller
         render={({ field }) => (
           <Select
             {...field}
             id={window.crypto.randomUUID()}
-            labelId="algorithEncrypt2fa"
             label="Algoritmo encriptacion 2FA"
           >
             <MenuItem value={"aes-256-cbc"}>Advanced Encryption Standard 256 Bits</MenuItem>

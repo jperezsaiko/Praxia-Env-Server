@@ -13,12 +13,13 @@ export default function IsProduction() {
 
   return (
     <>
-      <InputLabel id="isProduction">¿Es ambiente de produccion?</InputLabel>
+      <InputLabel>¿Es ambiente de produccion?</InputLabel>
       <Controller
         render={({ field }) => (
           <Select
             {...field}
-            labelId="isProduction"
+            id={window.crypto.randomUUID()}
+            color="warning"
             label="¿Es ambiente de produccion?"
           >
             <MenuItem value={"si"}>Si</MenuItem>

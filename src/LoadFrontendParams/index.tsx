@@ -17,10 +17,10 @@ export default function LoadFrontendParams() {
     if (file instanceof File) {
       const envVariables: EnvValuesFile = await readEnvVariables(file);
 
-      const parsed:EnvValuesFile = {
+      const parsed: EnvValuesFile = {
         ...envVariables,
-        ROBOT:JSON.parse(`${envVariables.ROBOT}`)
-      }
+        ROBOT: JSON.parse(`${envVariables.ROBOT}`),
+      };
 
       hook.setEnvValues(parsed);
     }
@@ -29,7 +29,6 @@ export default function LoadFrontendParams() {
   return (
     <>
       <MuiFileInput
-        placeholder="Parametros del cliente"
         size="small"
         fullWidth
         multiple={false}
@@ -37,7 +36,7 @@ export default function LoadFrontendParams() {
         inputProps={{
           accept: "plain/text",
         }}
-      />
+      ></MuiFileInput>
     </>
   );
 }

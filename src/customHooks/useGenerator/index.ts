@@ -16,24 +16,6 @@ const FRONT_END_CONFIG = {
   mode: "test",
 };
 
-const FRONT_END_ENV = {
-  REACT_APP_BACKEND: "http://localhost:8080/api/",
-  REACT_APP_BACKGROUND:
-    "https://res.cloudinary.com/dx5becozb/image/upload/v1670885774/img/background_enakxr.jpg",
-  REACT_APP_CHECK_PERMISSIONS: 1,
-  REACT_APP_CONFIG: FRONT_END_CONFIG,
-  REACT_APP_EMAIL_FROM: "redex@praxia.com",
-  REACT_APP_ENTERPRISE_NAME: "Cliente Praxia",
-  REACT_APP_FRONTEND: "http://localhost:3000/",
-  REACT_APP_LOGO_ENTERPRISE:
-    "https://res.cloudinary.com/dmtvwe2ur/image/upload/v1638806661/Assets-praxia/logo_saiko_o6yjhu.png ",
-  REACT_APP_LOGOEMPRESA:
-    "https://res.cloudinary.com/dx5becozb/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1670885704/img/saiko_wqpinn.jpg",
-  REACT_APP_LOGOPRAXIA:
-    "https://res.cloudinary.com/dx5becozb/image/upload/v1670885704/img/praxia_yx4xyn.png",
-  REACT_APP_URL_BACKEND: "http://localhost:8080",
-};
-
 const defaultValues = {
   ACCESS_TOKEN_DURATION: "60s",
   ACCESS_TOKEN_NAME: "praxiaAcessToken",
@@ -87,6 +69,7 @@ export default function useGenerator() {
     form.setValue("MAILJET_APPI_KEY", values.MAILJET_APPI_KEY);
     form.setValue("MAILJET_APPI_SECRET", values.MAILJET_APPI_SECRET);
     form.setValue("MAILJET_EMAIL_FROM", values.MAILJET_EMAIL_FROM);
+    form.setValue("PDF_ODC",values.PDF_ODC)
     form.setValue("PDF_API_KEY", values.PDF_API_KEY);
     form.setValue(
       "PDF_BANK_ACCOUNT_MOVEMENTS",
@@ -176,6 +159,7 @@ export default function useGenerator() {
     PDF_DOWNLOAD_API_KEY = ${envParams.PDF_DOWNLOAD_API_KEY}
     PUSH_PRIVATE_KEY = ${envParams.PUSH_PRIVATE_KEY}
     PUSH_PUBLIC_KEY = ${envParams.PUSH_PUBLIC_KEY}
+    PDF_ODC = ${envParams.PDF_ODC}
     REFRESH_TOKEN_NAME = ${envParams.REFRESH_TOKEN_NAME}
     REFRESH_TOKEN_WORD = ${envParams.REFRESH_TOKEN_WORD}
     ROBOT = ${JSON.stringify(ROBOT)}
@@ -185,11 +169,23 @@ export default function useGenerator() {
     URL_SERVER = ${envParams.URL_SERVER}
     SECRET_KEY = ${envParams.SECRET_KEY}
     SECRET_IV = ${envParams.SECRET_IV}
+
     `;
 
     const file = new Blob([parsedEnvFile], { type: "text/plain" });
 
+      const PowerBiProgramacionPagos = envParams.REACT_APP_BI_PROG_PAGOS !== null && envParams.REACT_APP_BI_PROG_PAGOS.length > 0 ? `REACT_APP_BI_PROG_PAGOS = ${envParams.REACT_APP_BI_PROG_PAGOS}` : '';
+
+    const PowerBiVentasCompras = envParams.REACT_APP_BI_COMPRAS !== null && envParams.REACT_APP_BI_COMPRAS.length > 0 ? `
+    
+    REACT_APP_BI_COMPRAS = ${envParams.REACT_APP_BI_COMPRAS}
+    REACT_APP_BI_VENTAS = ${envParams.REACT_APP_BI_COMPRAS}
+    
+    ` : '';
+
     const FRONT_END_ENV_FILE = `
+      ${PowerBiVentasCompras}
+      ${PowerBiProgramacionPagos}
       REACT_APP_BACKEND = ${envParams.URL_SERVER}/api/
       REACT_APP_BACKGROUND = https://res.cloudinary.com/dx5becozb/image/upload/v1670885774/img/background_enakxr.jpg
       REACT_APP_CHECK_PERMISSIONS = 1
