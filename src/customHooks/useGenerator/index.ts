@@ -95,7 +95,7 @@ export default function useGenerator() {
     form.setValue("URL_TC_AZURE", values.ROBOT.tc.url);
 
     const domains = values.URL_FRONT.split(",").filter(
-      (url, index) => index >= 1
+      (url, index) => index >= 1 && typeof(url) === "string"
     );
 
     domains.forEach((domain) => addDomain(domain, false));

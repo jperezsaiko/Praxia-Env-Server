@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useFilePicker } from "use-file-picker";
 import { MuiFileInput } from "mui-file-input";
 import { readEnvVariables } from "../helpers/files/index";

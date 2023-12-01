@@ -6,7 +6,6 @@ import Button from "@mui/material/Button";
 import useGenerator, { INITIAL_STATE } from "./customHooks/useGenerator";
 import AccessTokenName from "./AccessTokenName";
 import AzureFunctionUrl from "./AzureFunctionUrl";
-import WarningIcon from "@mui/icons-material/Warning";
 import BlobStorageKey from "./BlobStorageKey";
 import DatebaseName from "./DatabaseName";
 import DatebaseUsername from "./DatabaseUsername";

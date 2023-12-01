@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import { EnvValues, EnvValuesFile } from "../../customHooks/useGenerator/types";
+import { EnvValuesFile } from "../../customHooks/useGenerator/types";
 
 /**
  * Download a `Blob` instance on the client side
