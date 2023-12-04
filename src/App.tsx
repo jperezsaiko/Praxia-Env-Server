@@ -44,6 +44,7 @@ import Domains from "./Domains";
 import OdcKey from "./OdcKey";
 import BiVentasCompras from "./BiVentasCompras";
 import BiProgPagos from "./BiProgPagos";
+import FacturamaProduccion from "./FacturamaProduccion";
 
 export const Context = createContext<ReturnUseGenerator>({
   attemptCreateEnvFile: () => {},
@@ -135,6 +136,7 @@ function App() {
 
               <ToDoRobotUrl />
               <ToDoKeyRobot />
+              <FacturamaProduccion/>
             </FormControl>
             <div className="generateEnv">
               <LoadFrontendParams />

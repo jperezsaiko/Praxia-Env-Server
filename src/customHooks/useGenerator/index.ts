@@ -46,6 +46,11 @@ export default function useGenerator() {
   };
 
   const setEnvValues = (values: EnvValuesFile) => {
+
+    const isFacturamaProductionSet = Object.keys(values).includes('FACTURAMA_PRODUCTION');
+
+    const FACTURAMA_PRODUCTION = isFacturamaProductionSet ? values.FACTURAMA_PRODUCTION : false
+
     form.setValue("ACCESS_TOKEN_NAME", values.ACCESS_TOKEN_NAME);
     form.setValue("AZ_FUNTIONS_URL", values.AZ_FUNTIONS_URL);
     form.setValue("BLOB_STORAGE_KEY", values.BLOB_STORAGE_KEY);
@@ -58,12 +63,12 @@ export default function useGenerator() {
     form.setValue("FACTURAMA_3", values.FACTURAMA_3);
     form.setValue("FACTURAMA_MAKE_CALLS", values.FACTURAMA_MAKE_CALLS);
     form.setValue("FACTURAMA_PASSWORD", values.FACTURAMA_PASSWORD);
-    form.setValue("FACTURAMA_PRODUCTION", values.FACTURAMA_PRODUCTION);
+    form.setValue("FACTURAMA_PRODUCTION", FACTURAMA_PRODUCTION);
     form.setValue("FACTURAMA_USER", values.FACTURAMA_USER);
     form.setValue("GITHUB_TOKEN", values.GITHUB_TOKEN);
     form.setValue("IS_PRODUCTION", values.IS_PRODUCTION);
     form.setValue("JWT_WORD", values.JWT_WORD);
-    form.setValue("KEY_BIRTHDAY_AZURE", values.ROBOT.birthday.url);
+    form.setValue("KEY_BIRTHDAY_AZURE", values.ROBOT.birthday.key);
     form.setValue("KEY_CONTRACT_AZURE", values.ROBOT.contract.key);
     form.setValue("KEY_TC_AZURE", values.ROBOT.tc.key);
     form.setValue("MAILJET_APPI_KEY", values.MAILJET_APPI_KEY);
@@ -140,7 +145,7 @@ export default function useGenerator() {
     FACTURAMA_3=https://apisandbox.facturama.mx
     FACTURAMA_MAKE_CALLS=${envParams.FACTURAMA_MAKE_CALLS ? "true" : "false"}
     FACTURAMA_PASSWORD=${envParams.FACTURAMA_PASSWORD}
-    FACTURAMA_PRODUCTION=${envParams.IS_PRODUCTION ? "true" : "false"}
+    FACTURAMA_PRODUCTION=${envParams.FACTURAMA_PRODUCTION}
     FACTURAMA_TOKEN=${btoa(
       envParams.FACTURAMA_USER + ":" + envParams.FACTURAMA_PASSWORD
     )}
@@ -174,7 +179,7 @@ export default function useGenerator() {
 
     const file = new Blob([parsedEnvFile], { type: "text/plain" });
 
-      const PowerBiProgramacionPagos = envParams.REACT_APP_BI_PROG_PAGOS !== null && envParams.REACT_APP_BI_PROG_PAGOS.length > 0 ? `REACT_APP_BI_PROG_PAGOS = ${envParams.REACT_APP_BI_PROG_PAGOS}` : '';
+    const PowerBiProgramacionPagos = envParams.REACT_APP_BI_PROG_PAGOS !== null && envParams.REACT_APP_BI_PROG_PAGOS.length > 0 ? `REACT_APP_BI_PROG_PAGOS = ${envParams.REACT_APP_BI_PROG_PAGOS}` : '';
 
     const PowerBiVentasCompras = envParams.REACT_APP_BI_COMPRAS !== null && envParams.REACT_APP_BI_COMPRAS.length > 0 ? `
     
